@@ -3,8 +3,11 @@ import Form from "./components/Form.js";
 import "./App.css";
 
 class App extends Component {
-  getRecipe = async (e) => {
+  state = {
+    recipes: []
+  };
 
+  getRecipe = async e => {
     const recipeName = e.target.elements.recipeName.value;
     e.preventDefault();
 
@@ -15,7 +18,8 @@ class App extends Component {
     );
 
     const data = await api_call.json();
-    console.log(data);
+    this.setState({ recipes: data.recipes });
+    console.log(this.state.recipes);
   };
 
   render() {
@@ -25,6 +29,9 @@ class App extends Component {
           <h1 className="App-title">Recipe Search</h1>
         </header>
         <Form getRecipe={this.getRecipe} />
+        {this.state.recipes.map(recipe => {
+          return <p>{recipe.title}</p>;
+        })}
       </div>
     );
   }
