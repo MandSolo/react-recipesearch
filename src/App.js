@@ -27,18 +27,10 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Recipe Search</h1>
+          <h1>Recipe Search</h1>
         </header>
         <Form getRecipe={this.getRecipe} />
-        {/* {this.state.recipes.map(recipe => {
-          return (
-            <div key={recipe.recipe_id}>
-              <img src={recipe.image_url} alt="{recipe.title}" />
-              <p>{recipe.title}</p>
-            </div>
-          );
-        })} */}
-        <Recipes />
+        <Recipes recipes={this.state.recipes} />
       </div>
     );
   }
