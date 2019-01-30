@@ -1,4 +1,5 @@
 import React from 'react';
+import "../styling/Recipes.css"
 
 const Recipes = props => (
     <div className="recipe-container">
@@ -13,9 +14,9 @@ const Recipes = props => (
             />
             <div className="recipe-viewer-text">
               <h2>{recipe.title}</h2>
-              <p>Source: {recipe.publisher}</p>
-              <p>Social Ranking: {recipe.social_rank}</p>
-              <a href={recipe.source_url}>go to recipe!</a>
+              <p>Recipe Source: {recipe.publisher}</p>
+              <p>Social Ranking: {recipe.social_rank}%</p>
+              <a href={recipe.source_url}> Sounds tasty! Click here to cook this... </a>
             </div>
           </div>
         </div>
