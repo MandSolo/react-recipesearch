@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Form from "./components/Form.js";
+import Recipes from "./components/Recipes.js";
 import "./App.css";
 
 class App extends Component {
@@ -29,15 +30,15 @@ class App extends Component {
           <h1 className="App-title">Recipe Search</h1>
         </header>
         <Form getRecipe={this.getRecipe} />
-        {this.state.recipes.map(recipe => {
+        {/* {this.state.recipes.map(recipe => {
           return (
-            <div>
-              <img src={recipe.image_url} alt="{recipe.title}"/>
-<p key={recipe.recipe_id}> {recipe.title}</p>
-</div>
-          )
-        
-        })}
+            <div key={recipe.recipe_id}>
+              <img src={recipe.image_url} alt="{recipe.title}" />
+              <p>{recipe.title}</p>
+            </div>
+          );
+        })} */}
+        <Recipes />
       </div>
     );
   }
